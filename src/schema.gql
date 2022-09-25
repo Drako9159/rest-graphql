@@ -4,5 +4,7 @@
 
 type Query {
   message: String!
-  randomDice: Float!
+
+  """Este campo retorna un numero"""
+  randomDice(max: Float!): Int!
 }

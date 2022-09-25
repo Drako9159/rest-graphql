@@ -4,9 +4,16 @@ import { Controller, Get } from '@nestjs/common';
 export class HelloWorldRestController {
 
     @Get()
-    getHello() {
+    getHelloWorld() {
         return {
             message: 'Hello World!'
         }
     }
+    @Get("dice")
+    getRandomNumber() {
+        return {
+            dice: Math.floor(Math.random() * 6) + 1
+        }
+    }
+    
 }

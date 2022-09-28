@@ -11,7 +11,7 @@ export class HelloWorldGraphqlResolver {
     }
     @Query(() => Int, { name: "randomDice", description: "Este campo retorna un numero" })
     getRandomNumber(
-        @Args("max") max: number = 6
+        @Args("max", {type: () => Int, nullable:true}) max: number = 6
     ): number {
         return getRandomNumber(max);
 
